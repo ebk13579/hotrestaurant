@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Jumbotron ({ children }) {
+export function Jumbotron (props) {
   return (
     <div
       style={{
@@ -11,9 +11,13 @@ function Jumbotron ({ children }) {
       }}
       className='jumbotron'
     >
-      {children}
+      <h1 className='text-center'>
+        <span className='fa fa-fire' /> {props.headerName}
+      </h1>
+      <hr />
+      <h2 className='text-center'>{props.lead}</h2>
+      <br />
+      {props.children}
     </div>
   )
 }
-
-export default Jumbotron
